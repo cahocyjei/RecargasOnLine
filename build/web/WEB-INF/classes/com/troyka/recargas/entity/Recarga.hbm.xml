@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/07/2022 01:07:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.troyka.recargas.entity.Recarga" table="RECARGA" schema="CAHOCYJEI" optimistic-lock="version">
+        <id name="idRecarga" type="big_decimal">
+            <column name="ID_RECARGA" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="operador" type="string">
+            <column name="OPERADOR" length="20" not-null="true" />
+        </property>
+        <property name="valorMinuto" type="double">
+            <column name="VALOR_MINUTO" precision="126" scale="0" not-null="true" />
+        </property>
+        <property name="cantidad" type="big_decimal">
+            <column name="CANTIDAD" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="total" type="double">
+            <column name="TOTAL" precision="126" scale="0" not-null="true" />
+        </property>
+        <set name="facturas" table="FACTURA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_RECARGA" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.troyka.recargas.entity.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>

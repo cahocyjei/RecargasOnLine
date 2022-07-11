@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:troyka</property>
+    <property name="hibernate.connection.username">CAHOCYJEI</property>
+    <property name="hibernate.connection.password">1914</property>
+    <mapping resource="com/troyka/recargas/entity/Factura.hbm.xml"/>
+    <mapping resource="com/troyka/recargas/entity/Recarga.hbm.xml"/>
+    <mapping resource="com/troyka/recargas/entity/Vendedor.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
